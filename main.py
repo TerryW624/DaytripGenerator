@@ -1,4 +1,4 @@
-import random
+from random import choice
 generation_state = False
 #Acts on whether the user wants to generate a Day Trip
 while generation_state == False:
@@ -25,40 +25,40 @@ tampa_bay_entertainments = ["Tiki Boat", "Guided Tampa Tour", "Dolphin Sightseei
 las_vegas_restaurants = ["Eiffel Tower Restaurant", "Sterling Brunch at Bally's", "Guy Savoy", "Mizumi", "Joë Robuchon"]
 las_vegas_entertainments = ["Cirque Du Soleil", "David Copperfield at the MGM Grand Hotel", "Big Bus Las Vegas Open Top Night Tour", "Shark Reef", "The High Roller"]
 while generation_state == True:
-    user_destination = random.choice(destinations)
+    user_destination = choice(destinations)
     print(f"Your destination will be {user_destination}")
     # sets the variable user_restaurant based on a destination
     def get_restaurant_by_city(destination):
     #placeholder variable
         user_restaurant = ""
         if destination == "New York":
-            user_restaurant = random.choice(new_york_restaurants)
+            user_restaurant = choice(new_york_restaurants)
         elif destination == "Los Angeles":
-            user_restaurant = random.choice(los_angeles_restaurants)
+            user_restaurant = choice(los_angeles_restaurants)
         elif destination == "Miami":
-            user_restaurant = random.choice(miami_restaurants)
+            user_restaurant = choice(miami_restaurants)
         elif destination == "Tampa Bay":
-            user_restaurant = random.choice(tampa_bay_restaurants)
+            user_restaurant = choice(tampa_bay_restaurants)
         elif destination == "Las Vegas":
-            user_restaurant = random.choice(las_vegas_restaurants)
+            user_restaurant = choice(las_vegas_restaurants)
         print(f"Your restaurant is {user_restaurant}")
     # sets the variable user_entertainment based on destination  
     def get_entertainment_by_city(destination):
     #placeholder variable
         user_entertainment = ""
         if destination == "New York":
-            user_entertainment = random.choice(new_york_entertainments)
+            user_entertainment = choice(new_york_entertainments)
         elif destination == "Los Angeles":
-            user_entertainment = random.choice(los_angeles_entertainments)
+            user_entertainment = choice(los_angeles_entertainments)
         elif destination == "Miami":
-            user_entertainment = random.choice(miami_entertainments)
+            user_entertainment = choice(miami_entertainments)
         elif destination == "Tampa Bay":
-            user_entertainment = random.choice(tampa_bay_entertainments)
+            user_entertainment = choice(tampa_bay_entertainments)
         elif destination == "Las Vegas":
-            user_entertainment = random.choice(las_vegas_entertainments) 
+            user_entertainment = choice(las_vegas_entertainments) 
         print(f"You should have fun at {user_entertainment}")
     transportations = ["Plane", "Train", "Car", "Bus"]
-    user_transportation = random.choice(transportations)
+    user_transportation = choice(transportations)
     print(f"You should arrive and depart by {user_transportation}")
     get_restaurant_by_city(user_destination)
     get_entertainment_by_city(user_destination)
@@ -99,7 +99,7 @@ Are You Sure?
 Y or N
             ''')
                     if user_input_4 == "Y":
-                        user_destination = random.choice(destinations)
+                        user_destination = choice(destinations)
                         print(f"Your destination will be {user_destination}")
                         get_restaurant_by_city(user_destination)
                         get_entertainment_by_city(user_destination)
@@ -109,7 +109,7 @@ Y or N
                     get_restaurant_by_city(user_destination)
                     reroll_state = False
                 elif user_input_3 == "3":
-                    user_transportation = random.choice(transportations)
+                    user_transportation = choice(transportations)
                     print(f"You should arrive and depart by {user_transportation}")
                     reroll_state = False
                 elif user_input_3 == "4":
