@@ -41,7 +41,7 @@ while generation_state == True:
             user_restaurant = choice(tampa_bay_restaurants)
         elif destination == "Las Vegas":
             user_restaurant = choice(las_vegas_restaurants)
-        print(f"Your restaurant is {user_restaurant}")
+        return user_restaurant
     # sets the variable user_entertainment based on destination  
     def get_entertainment_by_city(destination):
     #placeholder variable
@@ -56,17 +56,23 @@ while generation_state == True:
             user_entertainment = choice(tampa_bay_entertainments)
         elif destination == "Las Vegas":
             user_entertainment = choice(las_vegas_entertainments) 
-        print(f"You should have fun at {user_entertainment}")
+        return user_entertainment
     transportations = ["Plane", "Train", "Car", "Bus"]
     user_transportation = choice(transportations)
     print(f"You should arrive and depart by {user_transportation}")
-    get_restaurant_by_city(user_destination)
-    get_entertainment_by_city(user_destination)
+    user_restaurant = get_restaurant_by_city(user_destination)
+    print(f"Your restaurant is {user_restaurant}")
+    user_entertainment = get_entertainment_by_city(user_destination)
+    print(f"You should have fun at {user_entertainment}")
     reroll_state = False
     #End Greetings and user reroll
     while reroll_state == False:
         user_input_2 = input("Would you like to reroll? Y or N ")
         if user_input_2 == "N":
+            print(f"Your destination will be {user_destination}")
+            print(f"You should arrive and depart by {user_transportation}")
+            print(f"Your restaurant is {user_restaurant}")
+            print(f"You should have fun at {user_entertainment}")
             if user_transportation == "Plane":
                 print("Great! Enjoy your Flight!")
                 generation_state = False
@@ -101,19 +107,32 @@ Y or N
                     if user_input_4 == "Y":
                         user_destination = choice(destinations)
                         print(f"Your destination will be {user_destination}")
-                        get_restaurant_by_city(user_destination)
-                        get_entertainment_by_city(user_destination)
                         print(f"You should arrive and depart by {user_transportation}")
+                        user_restaurant = get_restaurant_by_city(user_destination)
+                        print(f"Your restaurant is {user_restaurant}")
+                        user_entertainment = get_entertainment_by_city(user_destination)
+                        print(f"You should have fun at {user_entertainment}")
                         reroll_state = False
                 elif user_input_3 == "2":
-                    get_restaurant_by_city(user_destination)
+                    print(f"Your destination will be {user_destination}")
+                    print(f"You should arrive and depart by {user_transportation}")
+                    user_restaurant = get_restaurant_by_city(user_destination)
+                    print(f"Your restaurant is {user_restaurant}")
+                    print(f"You should have fun at {user_entertainment}")
                     reroll_state = False
                 elif user_input_3 == "3":
+                    print(f"Your destination will be {user_destination}")
                     user_transportation = choice(transportations)
                     print(f"You should arrive and depart by {user_transportation}")
+                    print(f"Your restaurant is {user_restaurant}")
+                    print(f"You should have fun at {user_entertainment}")
                     reroll_state = False
                 elif user_input_3 == "4":
-                    get_entertainment_by_city(user_destination)
+                    print(f"Your destination will be {user_destination}")
+                    print(f"You should arrive and depart by {user_transportation}")
+                    print(f"Your restaurant is {user_restaurant}")
+                    user_entertainment = get_entertainment_by_city(user_destination)
+                    print(f"You should have fun at {user_entertainment}")
                     reroll_state = False
                 elif user_input_3 == "Back":
                     reroll_state = False
